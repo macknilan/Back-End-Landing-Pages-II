@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% comment %}  PLANTILLA PARA MOSTRAR LAS CATEGORIAS DE LOS MUEBLES {% endcomment %}
+{% block title %} Chifonires {% endblock title %}
+{% block CategoryTemplate %}
+            <div id="main" class="row fondo_de_madera">
+                <div class="row-content buffer clear-after">
+                    <div class="grid-items preload">
+                    {% for mueble in object_list %}
+                            <article class="item column six">
+                                <a href="{% url 'detailchifoniers' mueble.slug %} ">
+                                    <figure><img src="/media/{{ mueble.foto_1 }}"><span class="blog-overlay"><i class="fa fa-plus"></i></span></figure>
+                                    <div class="blog-excerpt">
+                                        <div class="blog-excerpt-inner">
+                                            <h5 class="meta-post">Leer m&aacute;s&nbsp;&nbsp;&nbsp;<i class="fa fa-plus-square-o"></i></h5>
+                                            <h2>{{mueble.modelo}}</h2>
+                                        </div><!-- blog-excerpt --> 
+                                    </div><!-- blog-excerpt-inner -->
+                                </a>
+                            </article>
+                    {% endfor %}
+                        <!--
+                        <article class="item column six">
+                            <a href="#">
+                                <figure><img src="http://placehold.it/800x600/ddd/fff&text=_Comedor%20No._2_" alt=""><span class="blog-overlay"><i class="fa fa-camera-retro"></i></span></figure>
+                                <div class="blog-excerpt">
+                                    <div class="blog-excerpt-inner">
+                                        <h5 class="meta-post">Leer m&aacute;s&nbsp;&nbsp;&nbsp;<i class="fa fa-plus-square-o"></i></h5>
+                                        <h2>Nombre del comedor</h2>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        -->
+                        <div class="shuffle-sizer three"></div>
+                    </div><!-- grid-items -->
+                {% include 'pagination_muebles_list.html' %}
+                </div><!-- row-content -->
+            </div><!-- row -->
+{% endblock CategoryTemplate %}

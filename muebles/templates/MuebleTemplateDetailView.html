@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% comment %}  PLANTILLA PARA MOSTRAR A DETALLE EL MUEBLE {% endcomment %}
+{% block title %} Muebles {% endblock title %}
+{% block DetailTemplate %}
+<div id="main" class="row fondo_de_madera">
+    <div class="row-content buffer-left buffer-right buffer-bottom">
+        <div class="post-area clear-after">
+            <article role="main">
+                <!-- BREADCUMBS -->
+                    <h5 class="meta-post"><a>{{ object.categoria }} &frasl;</a> <a>{{ object.modelo }}</a></h5>
+                <!-- BREADCUMBS -->
+                <h1>{{ object.modelo }}</h1>
+                <p>{{ object.descripcion|safe }}</p>
+                <p>{{ object.dimensiones|safe }}</p>
+                <h3>${{ object.precio|safe }}</h3>
+                <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>-->
+            </article>
+        </div><!-- post-area -->
+        <div id="main" class="row fondo_de_madera">
+            <div class="row-content buffer clear-after">
+                <div class="grid-items portfolio-section preload lightbox">
+                    <article class="item column six">
+                        <figure><img src="/media/{{ object.foto_1 }}" alt="{{ object.modelo }}"></figure>
+                        <a class="overlay" href="/media/{{ object.foto_1 }}" data-lighter>
+                            <div class="overlay-content">
+                                <div class="post-type"><i class="fa fa-camera-retro"></i></div>
+                                <h2>{{ object.modelo }}</h2>
+                                <!--<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+                            </div><!-- overlay-content -->
+                        </a><!-- overlay -->
+                    </article>
+                    <article class="item column six">
+                        <figure><img src="/media/{{ object.foto_2 }}" alt="{{ object.modelo }}"></figure>
+                        <a class="overlay" href="/media/{{ object.foto_2 }}" data-lighter>
+                            <div class="overlay-content">
+                                <div class="post-type"><i class="fa fa-camera-retro"></i></div>
+                                <h2>{{ object.modelo }}</h2>
+                                <!--<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+                            </div><!-- overlay-content -->
+                        </a><!-- overlay -->
+                    </article>
+                    <article class="item column six">
+                        <figure><img src="/media/{{ object.foto_3 }}" alt="{{ object.modelo }}"></figure>
+                        <a class="overlay" href="/media/{{ object.foto_3 }}" data-lighter>
+                            <div class="overlay-content">
+                                <div class="post-type"><i class="fa fa-camera-retro"></i></div>
+                                <h2>{{ object.modelo }}</h2>
+                                <!--<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+                            </div><!-- overlay-content -->
+                        </a><!-- overlay -->
+                    </article>
+                    <article class="item column six">
+                        <figure><img src="/media/{{ object.foto_4 }}" alt="{{ object.modelo }}"></figure>
+                        <a class="overlay" href="/media/{{ object.foto_4 }}" data-lighter>
+                            <div class="overlay-content">
+                                <div class="post-type"><i class="fa fa-camera-retro"></i></div>
+                                <h2>{{ object.modelo }}</h2>
+                                <!--<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+                            </div><!-- overlay-content -->
+                        </a><!-- overlay -->
+                    </article>
+                    <article class="item column six">
+                        <figure><img src="/media/{{ object.foto_5 }}" alt="{{ object.modelo }}"></figure>
+                        <a class="overlay" href="/media/{{ object.foto_5 }}" data-lighter>
+                            <div class="overlay-content">
+                                <div class="post-type"><i class="fa fa-camera-retro"></i></div>
+                                <h2>{{ object.modelo }}</h2>
+                                <!--<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+                            </div><!-- overlay-content -->
+                        </a><!-- overlay -->
+                    </article>
+                    <div class="shuffle-sizer three"></div>
+                </div><!-- grid-items -->
+            </div><!-- row-content -->
+        </div><!-- row -->
+    <hr>
+    <!-- for PARA LISTAR EL NOMBRE DEL MUEBLE Y USARLO COMO LINK Y/O PAGINADOR -->
+    {% for comedor in categoria_mueble_comedor %}
+        {% if "comedores" in object.get_absolute_url and object.modelo != comedor.modelo %}
+            <div><i class="fa fa-link"></i> <a href="{% url 'detailcomedores' comedor.slug %}" title="{{comedor.modelo}}">{{ comedor.modelo }}</a></div>
+        {% endif %}
+    {% endfor %}
+    {% for cocina in categoria_mueble_cocina %}
+        {% if "cocinas" in object.get_absolute_url and object.modelo != cocina.modelo %}
+            <div><i class="fa fa-link"></i> <a href="{% url 'detailcocinas' cocina.slug %}" title="{{cocina.modelo}}">{{ cocina.modelo }}</a></div>
+        {% endif %}
+    {% endfor %}
+    {% for chifonier in categoria_mueble_chifonier %}
+        {% if "chifoniers" in object.get_absolute_url and object.modelo != chifonier.modelo %}
+            <div><i class="fa fa-link"></i> <a href="{% url 'detailchifoniers' chifonier.slug %}" title="{{chifonier.modelo}}">{{ chifonier.modelo }}</a></div>
+        {% endif %}
+    {% endfor %}
+    {% for cunas in categoria_mueble_cuna %}
+        {% if "cunas" in object.get_absolute_url and object.modelo != cunas.modelo %}
+            <div><i class="fa fa-link"></i> <a href="{% url 'detailcunas' cunas.slug %}" title="{{cunas.modelo}}">{{ cunas.modelo }}</a></div>
+        {% endif %}
+    {% endfor %}
+    <hr>
+{% endblock DetailTemplate %}

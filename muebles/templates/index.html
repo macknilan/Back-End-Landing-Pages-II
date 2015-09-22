@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% comment %}  _aqui_van_los_comentarios_ {% endcomment %}
+{% block title %} Muebles y Diseños de Madera del Centro {% endblock title %}
+{% block fpss %}
+    <div id="intro-wrap" class="intro-wrap">
+        <div id="intro" class="preload darken" data-autoplay="5000" data-navigation="true" data-pagination="true" data-transition="fade">
+            {% for picturescat in  pictures_fpss %}
+                <div class="intro-item" style="background-image">
+                    <!-- <a href="#" title=""><img src="/media/{{ picturescat.imagen_categoria }}"></a> -->
+                    {% thumbnail picturescat.imagen_categoria "1800x600" as im %}
+                            <img src="{{ im.url }}">
+                    {% endthumbnail %}
+                </div>
+            {% endfor %}
+        </div><!-- intro -->
+    </div><!-- intro-wrap -->
+{% endblock fpss %}

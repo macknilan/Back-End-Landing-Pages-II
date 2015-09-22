@@ -1,0 +1,5 @@
+<!-- TEMPLATE PARA INCLUIR inclusion_tags EN LA PLANTILLA DE DETALLE DE MUEBLE -->
+{% for link in link_mueble %}
+    <div><a href=" {% url 'detailcomedores' link.slug %} " title="{{link.slug}}"> {{link.modelo}}</a></div>
+{% endfor %}
+
