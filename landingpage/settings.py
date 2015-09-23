@@ -25,7 +25,7 @@ SECRET_KEY = os.environ['MUEBLERIALLAVE']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '162.243.135.136', 'muebleria.konetl.co']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '52.8.45.246', 'muebleria.konetl.co']
 
 
 # Application definition
