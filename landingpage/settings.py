@@ -158,12 +158,7 @@ THUMBNAIL_ALIASES = {
         'img_mueble_admin': {'size': (400, 500), 'quality': 85, 'subsampling': 2},
     },
 }
-THUMBNAIL_HIGH_RESOLUTION = True
-THUMBNAIL_HIGHRES_INFIX = '@2x'
-THUMBNAIL_PROGRESSIVE = 100
-THUMBNAIL_QUALITY = 85
-THUMBNAIL_DEFAULT_STORAGE = 'custom_storages.MediaStorage'
-THUMBNAIL_BASEDIR = 'miniaturas'
+
 
 # ################################## EASY-THUMBNAILS ##################################
 
@@ -191,6 +186,13 @@ if DEBUG:
     # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     MEDIA_ROOT = os.sep.join(
         os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
+
+    THUMBNAIL_HIGH_RESOLUTION = True
+    THUMBNAIL_HIGHRES_INFIX = '@2x'
+    THUMBNAIL_PROGRESSIVE = 100
+    THUMBNAIL_QUALITY = 85
+    THUMBNAIL_BASEDIR = 'miniaturas'
+
 
 # ###################### AWS S3 SETTINGS ######################
 # ############ CKEDITOR ############
@@ -223,13 +225,19 @@ if DEBUG is False:
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
+    THUMBNAIL_HIGH_RESOLUTION = True
+    THUMBNAIL_HIGHRES_INFIX = '@2x'
+    THUMBNAIL_PROGRESSIVE = 100
+    THUMBNAIL_QUALITY = 85
+    THUMBNAIL_DEFAULT_STORAGE = 'custom_storages.MediaStorage'
+    THUMBNAIL_BASEDIR = 'miniaturas'    
+
 # ###################### AWS S3 SETTINGS ######################
 # ############################################ STATIC & MEDIA FIELDS ############################################
 
 # ################## CKEDITOR ##################
 CKEDITOR_UPLOAD_PATH = "uploads_by_ckeditor/"
 # ################## CKEDITOR ##################
-# ########### STATIC & MEDIA FIELDS ###########
 # ######################## SEND EMAILS ########################
 EMAIL_USE_TLS = True
 """EMAIL_HOST = 'EMAIL_HOST'"""
