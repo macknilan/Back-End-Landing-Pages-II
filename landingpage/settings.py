@@ -159,6 +159,7 @@ THUMBNAIL_ALIASES = {
     },
 }
 
+THUMBNAIL_DEBUG = DEBUG
 
 # ################################## EASY-THUMBNAILS ##################################
 
@@ -229,7 +230,8 @@ if DEBUG is False:
     THUMBNAIL_HIGHRES_INFIX = '@2x'
     THUMBNAIL_PROGRESSIVE = 100
     THUMBNAIL_QUALITY = 85
-    THUMBNAIL_DEFAULT_STORAGE = 'custom_storages.MediaStorage'
+#     THUMBNAIL_DEFAULT_STORAGE = 'custom_storages.MediaStorage'
+    THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     THUMBNAIL_BASEDIR = 'miniaturas'    
 
 # ###################### AWS S3 SETTINGS ######################
