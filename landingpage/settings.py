@@ -15,7 +15,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -25,7 +24,8 @@ SECRET_KEY = os.environ['MUEBLERIALLAVE']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '52.8.45.246', 'muebleria.konetl.co']
+# ALLOWED_HOSTS = ['localhost', '127.0.0.1', '52.8.45.246', 'muebleria.konetl.co']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -159,15 +159,15 @@ THUMBNAIL_ALIASES = {
     },
 }
 
-THUMBNAIL_DEBUG = DEBUG
-
 # ################################## EASY-THUMBNAILS ##################################
-
 if DEBUG:
     STATIC_URL = '/static/'
 
+    STATIC_ROOT = os.sep.join(
+        os.path.abspath(__file__).split(os.sep)[:-2] + ['static'])
+
     STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
+        os.path.join(BASE_DIR, 'landingpage/static'),
     )
 
     STATICFILES_FINDERS = (
@@ -180,13 +180,11 @@ if DEBUG:
     # PARA PONER CACHE LOS ARCHIVOS ESTATICOS EN PRODUCCION DEBUG = False
     STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
     # PARA PONER CACHE LOS ARCHIVOS ESTATICOS EN PRODUCCION
-    STATIC_ROOT = os.sep.join(
-        os.path.abspath(__file__).split(os.sep)[:-2] + ['content'])
 
     MEDIA_URL = '/media/'
-    # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    MEDIA_ROOT = os.sep.join(
-        os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#    MEDIA_ROOT = os.sep.join(
+#        os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
 
     THUMBNAIL_HIGH_RESOLUTION = True
     THUMBNAIL_HIGHRES_INFIX = '@2x'
@@ -203,7 +201,7 @@ if DEBUG:
 if DEBUG is False:
 
     STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
+        os.path.join(BASE_DIR, 'landingpage/static'),
     )
 
     STATICFILES_FINDERS = (
@@ -222,17 +220,21 @@ if DEBUG is False:
     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-    MEDIAFILES_LOCATION = 'media'
-    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+#    MEDIAFILES_LOCATION = 'media'
+#    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+#    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#    MEDIA_ROOT = os.sep.join(
+#        os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
 
     THUMBNAIL_HIGH_RESOLUTION = True
     THUMBNAIL_HIGHRES_INFIX = '@2x'
     THUMBNAIL_PROGRESSIVE = 100
     THUMBNAIL_QUALITY = 85
-#     THUMBNAIL_DEFAULT_STORAGE = 'custom_storages.MediaStorage'
-    THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-    THUMBNAIL_BASEDIR = 'miniaturas'    
+#    THUMBNAIL_DEFAULT_STORAGE = 'custom_storages.MediaStorage'
+    THUMBNAIL_BASEDIR = 'miniaturas'
 
 # ###################### AWS S3 SETTINGS ######################
 # ############################################ STATIC & MEDIA FIELDS ############################################
