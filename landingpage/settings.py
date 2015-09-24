@@ -89,16 +89,16 @@ WSGI_APPLICATION = 'landingpage.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ['MUEBLERIANAME'],
-        'USER': os.environ['MUEBLERIAUSER'],
-        'PASSWORD': os.environ['MUEBLERIAPASSWORD'],
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+#  DATABASES = {
+#      'default': {
+#          'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#          'NAME': os.environ['MUEBLERIANAME'],
+#          'USER': os.environ['MUEBLERIAUSER'],
+#          'PASSWORD': os.environ['MUEBLERIAPASSWORD'],
+#          'HOST': 'localhost',
+#          'PORT': '',
+#      }
+#  }
 # ################ MEMCACHED ################
 CACHES = {
     'default': {
@@ -124,12 +124,12 @@ CACHES = {
 # THUMBNAIL_REDIS_PORT = 6379
 # ################ REDIS ################
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 # ################ DATABASE ################
 
 # Internationalization
@@ -182,7 +182,7 @@ if DEBUG:
     # PARA PONER CACHE LOS ARCHIVOS ESTATICOS EN PRODUCCION
 
     MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #    MEDIA_ROOT = os.sep.join(
 #        os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
 
