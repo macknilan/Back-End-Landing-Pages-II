@@ -183,8 +183,8 @@ if DEBUG:
 
     MEDIA_URL = '/media/'
 #    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#    MEDIA_ROOT = os.sep.join(
-#        os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
+    MEDIA_ROOT = os.sep.join(
+        os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
 
     THUMBNAIL_HIGH_RESOLUTION = True
     THUMBNAIL_HIGHRES_INFIX = '@2x'
@@ -220,12 +220,12 @@ if DEBUG is False:
     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-#    MEDIAFILES_LOCATION = 'media'
-#    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-#    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#    MEDIA_URL = '/media/'
+#    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #    MEDIA_ROOT = os.sep.join(
 #        os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
 
@@ -233,7 +233,7 @@ if DEBUG is False:
     THUMBNAIL_HIGHRES_INFIX = '@2x'
     THUMBNAIL_PROGRESSIVE = 100
     THUMBNAIL_QUALITY = 85
-#    THUMBNAIL_DEFAULT_STORAGE = 'custom_storages.MediaStorage'
+    THUMBNAIL_DEFAULT_STORAGE = 'custom_storages.MediaStorage'
     THUMBNAIL_BASEDIR = 'miniaturas'
 
 # ###################### AWS S3 SETTINGS ######################
