@@ -2,12 +2,13 @@
 
 
 from django.contrib import admin
-from easy_thumbnails.files import get_thumbnailer
+from sorl.thumbnail import get_thumbnail
+from sorl.thumbnail.admin import AdminImageMixin
 from .models import Categoria
 
 
 @admin.register(Categoria)
-class CategoriaAdmin(admin.ModelAdmin):
+class CategoriaAdmin(AdminImageMixin, admin.ModelAdmin):
 #    import ipdb; ipdb.set_trace() # ESTO ES PARA DEBUGEARC
     list_display = ('cat_mueble', 'slug', 'foto_categoria', )
     list_filter = ('cat_mueble', 'slug', )
@@ -19,9 +20,7 @@ class CategoriaAdmin(admin.ModelAdmin):
         """
         MOSTRAR IMAGENES DEL ADMINISTRADOR
         """
-        return '<img src="%s">' % get_thumbnailer(obj.imagen_categoria)['img_categoria_admin'].url
+        return '<img src="%s">' % get_thumbnail(obj.imagen_categoria, '450x450', quality=99).url
     foto_categoria.allow_tags = True
 #    import ipdb; ipdb.set_trace() # ESTO ES PARA DEBUGEARC
-
-
 

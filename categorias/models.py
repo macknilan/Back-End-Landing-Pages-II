@@ -8,7 +8,7 @@ from django.db.models.signals import pre_delete
 from django.utils.text import slugify
 from django.utils.html import format_html
 from django.utils.crypto import get_random_string
-from easy_thumbnails.fields import ThumbnailerImageField
+from sorl.thumbnail import ImageField
 
 
 class SlugMixin(object):
@@ -44,7 +44,7 @@ class Categoria(SlugMixin, models.Model):
         ('recamaras', 'Recamaras'),
         )
     cat_mueble = models.CharField("Categoria del mueble", max_length=10, choices=CAT_M, default='ninguno')
-    imagen_categoria = ThumbnailerImageField("Foto de Categoria", upload_to=change_file_name, max_length=50)
+    imagen_categoria = ImageField("Foto de Categoria", upload_to=change_file_name, max_length=50)
     slug = models.CharField(max_length=140, unique=True, blank=True)
 
     def get_absolute_url(self):

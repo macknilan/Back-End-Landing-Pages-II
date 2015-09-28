@@ -8,6 +8,7 @@ from django.utils.crypto import get_random_string
 from django.utils.text import slugify
 # from django.core.urlresolvers import reverse
 from ckeditor.fields import RichTextField
+from sorl.thumbnail import ImageField
 from categorias.models import Categoria
 
 

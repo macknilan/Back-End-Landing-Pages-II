@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'django_extensions',
     'storages',
-    'easy_thumbnails',
+    'sorl.thumbnail',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -150,16 +150,7 @@ USE_TZ = True
 # ############################################ STATIC & MEDIA FIELDS ############################################
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-# ################################## EASY-THUMBNAILS ##################################
 
-THUMBNAIL_ALIASES = {
-    'categorias.Categoria.imagen_categoria': {
-        'img_categoria_admin': {'size': (400, 500), 'quality': 85, 'subsampling': 2},
-        'img_mueble_admin': {'size': (400, 500), 'quality': 85, 'subsampling': 2},
-    },
-}
-
-# ################################## EASY-THUMBNAILS ##################################
 if DEBUG:
     STATIC_URL = '/static/'
 
@@ -185,12 +176,6 @@ if DEBUG:
 #    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     MEDIA_ROOT = os.sep.join(
         os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
-
-    THUMBNAIL_HIGH_RESOLUTION = True
-    THUMBNAIL_HIGHRES_INFIX = '@2x'
-    THUMBNAIL_PROGRESSIVE = 100
-    THUMBNAIL_QUALITY = 85
-    THUMBNAIL_BASEDIR = 'miniaturas'
 
 
 # ###################### AWS S3 SETTINGS ######################
@@ -223,18 +208,6 @@ if DEBUG is False:
     MEDIAFILES_LOCATION = 'media'
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-
-#    MEDIA_URL = '/media/'
-#    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#    MEDIA_ROOT = os.sep.join(
-#        os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
-
-    THUMBNAIL_HIGH_RESOLUTION = True
-    THUMBNAIL_HIGHRES_INFIX = '@2x'
-    THUMBNAIL_PROGRESSIVE = 100
-    THUMBNAIL_QUALITY = 85
-    THUMBNAIL_DEFAULT_STORAGE = 'custom_storages.MediaStorage'
-    THUMBNAIL_BASEDIR = 'miniaturas'
 
 # ###################### AWS S3 SETTINGS ######################
 # ############################################ STATIC & MEDIA FIELDS ############################################

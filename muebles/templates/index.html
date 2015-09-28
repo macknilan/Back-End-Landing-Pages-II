@@ -8,9 +8,9 @@
             {% for picturescat in  pictures_fpss %}
                 <div class="intro-item" style="background-image">
                     <!-- <a href="#" title=""><img src="/media/{{ picturescat.imagen_categoria }}"></a> -->
-                    {% thumbnail picturescat.imagen_categoria "1800x600" as im %}
-                            <img src="{{ im.url }}">
-                    {% endthumbnail %}
+                    <img src="{{ categorias.imagen_categoria|thumbnail_url:'img_mueble_index' }}" alt="">
+                    <!-- <img src="{{ userprofile.avatar|thumbnail_url:'avatar' }}" alt="{{ user.username }}"/> -->
+
                 </div>
             {% endfor %}
         </div><!-- intro -->
