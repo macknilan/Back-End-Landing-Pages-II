@@ -6,7 +6,7 @@ from django.dispatch import receiver
 from django.db.models.signals import pre_delete
 # from django.core.urlresolvers import reverse
 from django.utils.text import slugify
-from django.utils.html import format_html
+# from django.utils.html import format_html
 from django.utils.crypto import get_random_string
 from sorl.thumbnail import ImageField
 

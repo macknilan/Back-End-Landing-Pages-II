@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 {% comment %}  PLANTILLA PARA MOSTRAR A DETALLE EL MUEBLE {% endcomment %}
 {% block title %} Muebles {% endblock title %}
 {% block DetailTemplate %}
@@ -16,12 +17,18 @@
                 <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>-->
             </article>
         </div><!-- post-area -->
+
+
         <div id="main" class="row fondo_de_madera">
             <div class="row-content buffer clear-after">
                 <div class="grid-items portfolio-section preload lightbox">
                     <article class="item column six">
-                        <figure><img src="/media/{{ object.foto_1 }}" alt="{{ object.modelo }}"></figure>
-                        <a class="overlay" href="/media/{{ object.foto_1 }}" data-lighter>
+                        {% thumbnail object.foto_1 "1600x1200" as foto_uno %}
+                            <!-- <figure><img src="/media/{{ object.foto_1 }}" alt="{{ object.modelo }}"></figure> -->
+                            <!-- <a class="overlay" href="/media/{{ object.foto_1 }}" data-lighter> -->
+                            <figure><img src="{{ foto_uno.url }}" alt="{{ object.modelo }}"></figure>
+                            <a class="overlay" href="{{ foto_uno.url }}" data-lighter>
+                        {% endthumbnail %}
                             <div class="overlay-content">
                                 <div class="post-type"><i class="fa fa-camera-retro"></i></div>
                                 <h2>{{ object.modelo }}</h2>
@@ -30,8 +37,12 @@
                         </a><!-- overlay -->
                     </article>
                     <article class="item column six">
-                        <figure><img src="/media/{{ object.foto_2 }}" alt="{{ object.modelo }}"></figure>
-                        <a class="overlay" href="/media/{{ object.foto_2 }}" data-lighter>
+                        <!-- <figure><img src="/media/{{ object.foto_2 }}" alt="{{ object.modelo }}"></figure>
+                        <a class="overlay" href="/media/{{ object.foto_2 }}" data-lighter> -->
+                        {% thumbnail object.foto_2 "1600x1200" as foto_dos %}
+                                <figure><img src="{{ foto_dos.url }}" alt="{{ object.modelo }}"></figure>
+                                <a class="overlay" href="{{ foto_dos.url }}" data-lighter>
+                        {% endthumbnail %}
                             <div class="overlay-content">
                                 <div class="post-type"><i class="fa fa-camera-retro"></i></div>
                                 <h2>{{ object.modelo }}</h2>
@@ -40,8 +51,12 @@
                         </a><!-- overlay -->
                     </article>
                     <article class="item column six">
-                        <figure><img src="/media/{{ object.foto_3 }}" alt="{{ object.modelo }}"></figure>
-                        <a class="overlay" href="/media/{{ object.foto_3 }}" data-lighter>
+                        {% thumbnail object.foto_3 "1600x1200" as foto_tres %}
+                                <figure><img src="{{ foto_tres.url }}" alt="{{ object.modelo }}"></figure>
+                                <a class="overlay" href="{{ foto_tres.url }}" data-lighter>
+                        {% endthumbnail %}
+                        <!-- <figure><img src="/media/{{ object.foto_3 }}" alt="{{ object.modelo }}"></figure>
+                        <a class="overlay" href="/media/{{ object.foto_3 }}" data-lighter> -->
                             <div class="overlay-content">
                                 <div class="post-type"><i class="fa fa-camera-retro"></i></div>
                                 <h2>{{ object.modelo }}</h2>
@@ -50,8 +65,12 @@
                         </a><!-- overlay -->
                     </article>
                     <article class="item column six">
-                        <figure><img src="/media/{{ object.foto_4 }}" alt="{{ object.modelo }}"></figure>
-                        <a class="overlay" href="/media/{{ object.foto_4 }}" data-lighter>
+                        {% thumbnail object.foto_4 "1600x1200" as foto_cuatro %}
+                                <figure><img src="{{ foto_cuatro.url }}" alt="{{ object.modelo }}"></figure>
+                                <a class="overlay" href="{{ foto_cuatro.url }}" data-lighter>
+                        {% endthumbnail %}
+                        <!--<figure><img src="/media/{{ object.foto_4 }}" alt="{{ object.modelo }}"></figure>
+                        <a class="overlay" href="/media/{{ object.foto_4 }}" data-lighter> -->
                             <div class="overlay-content">
                                 <div class="post-type"><i class="fa fa-camera-retro"></i></div>
                                 <h2>{{ object.modelo }}</h2>
@@ -60,8 +79,12 @@
                         </a><!-- overlay -->
                     </article>
                     <article class="item column six">
-                        <figure><img src="/media/{{ object.foto_5 }}" alt="{{ object.modelo }}"></figure>
-                        <a class="overlay" href="/media/{{ object.foto_5 }}" data-lighter>
+                        {% thumbnail object.foto_5 "1600x1200" as foto_cinco %}
+                                <figure><img src="{{ foto_cinco.url }}" alt="{{ object.modelo }}"></figure>
+                                <a class="overlay" href="{{ foto_cinco.url }}" data-lighter>
+                        {% endthumbnail %}
+                        <!-- <figure><img src="/media/{{ object.foto_5 }}" alt="{{ object.modelo }}"></figure>
+                        <a class="overlay" href="/media/{{ object.foto_5 }}" data-lighter> -->
                             <div class="overlay-content">
                                 <div class="post-type"><i class="fa fa-camera-retro"></i></div>
                                 <h2>{{ object.modelo }}</h2>
