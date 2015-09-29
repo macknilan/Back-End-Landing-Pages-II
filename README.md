@@ -12,7 +12,6 @@ para (ejemplo) varios proyectos.
     <div>django-ckeditor==5.0.2</div>
     <div>django-extensions==1.5.6</div>
     <div>django-storages==1.1.8</div>
-    <div>easy-thumbnails==2.2</div>
     <div>ipdb==0.8.1</div>
     <div>ipython==4.0.0</div>
     <div>ipython-genutils==0.1.0</div>
@@ -24,6 +23,7 @@ para (ejemplo) varios proyectos.
     <div>python-memcached==1.57</div>
     <div>simplegeneric==0.8.1</div>
     <div>six==1.9.0</div>
+    <div>sorl-thumbnail==12.3</div>
     <div>traitlets==4.0.0</div>
     <div>wheel==0.24.0</div>
 <br>
