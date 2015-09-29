@@ -217,12 +217,9 @@ CKEDITOR_UPLOAD_PATH = "uploads_by_ckeditor/"
 # ################## CKEDITOR ##################
 # ######################## SEND EMAILS ########################
 EMAIL_USE_TLS = True
-"""EMAIL_HOST = 'EMAIL_HOST'"""
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'EMAIL_HOST'
 EMAIL_PORT = 587
-"""EMAIL_HOST_USER = 'EMAIL_HOST_USER'"""
-EMAIL_HOST_USER = 'nomackayu@gmail.com'
-"""EMAIL_HOST_PASSWORD = 'EMAIL_HOST_PASSWORD'"""
+EMAIL_HOST_USER = 'EMAIL_HOST_USER'
 EMAIL_HOST_PASSWORD = 'EMAIL_HOST_PASSWORD'
 # ######################## SEND EMAILS ########################
 # ###################### DJANGO-CKEDITOR ######################
