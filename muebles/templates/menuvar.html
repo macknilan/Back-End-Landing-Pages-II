@@ -1,29 +1,22 @@
-                        <ul class="reset" role="navigation">
-                            <li class="menu-item"><a href="{% url 'comedores' %}" alt="Comedores" title="Comedores">Comedores</a></li>
-                            <li class="menu-item"><a href="{% url 'cocinas' %}" alt="Cocinas" title="Cocinas">Cocinas</a>
-                                <!--<ul class="sub-menu">
-                                    <li><a href="works-4-columns.html">Men&uacute; Uno</a></li>
-                                </ul>-->
-                            </li>
-                            <li class="menu-item"><a href="{% url 'chifoniers' %}" alt="Chifoniers" title="Chifoniers">Chifoniers</a>
-                                <!--<ul class="sub-menu">
-                                    <li><a href="blog-4-columns-masonry.html">Men&uacute; Uno</a></li>
-                                </ul>-->
-                            </li>
-                            <li class="menu-item"><a href="{% url 'cunas' %}" alt="Cunas" title="Cunas">Cunas</a>
-                                <!--<ul class="sub-menu">
-                                    <li><a href="home-01.html">Men&uacute; Uno</a></li>
-                                </ul>-->
-                            </li>
-                            <li class="menu-item"><a href=" {% url 'contacto' %}" alt="Contacto" title="Contacto">Contacto</a>
-                                <!--<ul class="sub-menu">
-                                    <li><a href="search.html">Men&uacute; Uno</a></li>
-                                    <li>
-                                        <a href="#">Sub Menu</a>
-                                        <ul class="sub-menu"><li><a href="#">Men&uacute; Uno</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>-->
-                            </li>
-                            <li class="menu-item"><a href="contact.html">PyR</a></li>
-                        </ul>
+        <div class="navbar-fixed">
+            <div class="nav-wrapper container">
+              <a href="{% url 'home' %}" class="brand-logo">Muebles y Diseños</a>
+              <a href="{% url 'home' %}" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{% url 'comedores' %}" title="Comedores">COMEDORES</a></li>
+                    <li><a href="{% url 'cocinas' %}" title="Cocinas">COCINAS</a></li>
+                    <li><a href="{% url 'chifoniers' %}" title="Chifoniers">CHIFONIERS</a></li>
+                    <li><a href="{% url 'cunas' %}" title="Cunas">CUNAS</a></li>
+                    <li><a href="{% url 'contacto' %}" title="Contacto">CONTACTO</a></li>
+                    <li><a href="#">PYR</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="{% url 'comedores' %}" title="Comedores">COMEDORES</a></li>
+                    <li><a href="{% url 'cocinas' %}" title="Cocinas">COCINAS</a></li>
+                    <li><a href="{% url 'chifoniers' %}" title="Chifoniers">CHIFONIERS</a></li>
+                    <li><a href="{% url 'cunas' %}" title="Cunas">CUNAS</a></li>
+                    <li><a href="{% url 'contacto' %}" title="Contacto">CONTACTO</a></li>
+                    <li><a href="#">PYR</a></li>
+                </ul>
+            </div>
+        </div>

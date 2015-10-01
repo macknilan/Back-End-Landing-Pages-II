@@ -3,16 +3,26 @@
 {% comment %}  _aqui_van_los_comentarios_ {% endcomment %}
 {% block title %} Muebles y Diseños de Madera del Centro {% endblock title %}
 {% block fpss %}
-    <div id="intro-wrap" class="intro-wrap">
-        <div id="intro" class="preload darken" data-autoplay="5000" data-navigation="true" data-pagination="true" data-transition="fade">
-            {% for picturescat in  pictures_fpss %}
-                <div class="intro-item" style="background-image">
-                    <!-- <a href="#" title=""><img src="/media/{{ picturescat.imagen_categoria }}"></a> -->
-                    {% thumbnail picturescat.imagen_categoria "1800x600" as imagendecategoria %}
+    <div class="row">
+    <article>
+        <div class="col s12">
+            <div class="slider">
+                <ul class="slides">
+                    {% for picturescat in pictures_fpss %}
+                        <li>
+                        {% thumbnail picturescat.imagen_categoria "1800x600" as imagendecategoria %}
                             <img src="{{ imagendecategoria.url }}" alt="">
-                    {% endthumbnail %}
-                </div>
-            {% endfor %}
-        </div><!-- intro -->
-    </div><!-- intro-wrap -->
+                        {% endthumbnail %}
+                            <!-- <img src="imgs/850x400_01_text.png"> -->
+                            <div class="caption center-align">
+                              <h3>{{ picturescat.cat_mueble }}</h3>
+                              <!--<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div><!-- .slider -->
+        </div><!--.col 12 -->
+    </article>
+    </div><!--.row -->
 {% endblock fpss %}

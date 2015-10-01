@@ -6,33 +6,29 @@
  ChifoniersCategoryTemplateView.html
  --> 
  {% endcomment %}
+<div class="row container">
+    {% if is_paginated %}
+        <!-- <ul class="clear-after reset plain"> -->
+            {% if page_obj.has_previous %}
+                <div class="waves-effect col s1 m1 l1">
+                    <a href="?page={{ page_obj.previous_page_number }}">
+                        <i class="material-icons">chevron_left</i></a>
+                </div>
+            {% else %}
+                <div class="waves-effect col s1 m1 l1">
+                    <a href="#" class="button transparent aqua">
+                        <i class="material-icons">chevron_left</i></a>
+                </div>                                
+            {% endif %}
+            {% if page_obj.has_next %}
+                <div class="waves-effect col offset-s10 offset-m10 offset-l10">
+                    <a href="?page={{ page_obj.next_page_number }}">
+                            <i class="material-icons">chevron_right</i></a>
+                </div>
+            {% endif %}
+        <!-- </ul> -->
+    {% endif %}
+</div><!-- .row container -->
 
-                    <div id="pagination">
-                        {% if is_paginated %}
-                            <ul class="clear-after reset plain">
-                                {% if page_obj.has_previous %}
-                                    <li id="older" class="pagination-nav">
-                                        <a href="?page={{ page_obj.previous_page_number }} " class="button transparent aqua">
-                                            <i class="fa fa-chevron-left"></i>
-                                                <span class="label">Anterior</span>
-                                            </a>
-                                    </li>
-                                {% else %}
-                                    <li id="older" class="pagination-nav">
-                                        <a href="#" class="button transparent aqua">
-                                            <i class="fa fa-chevron-left"></i>
-                                                <span class="label">Anterior</span>
-                                            </a>
-                                    </li>                                
-                                {% endif %}
-                                {% if page_obj.has_next %}
-                                    <li id="newer" class="pagination-nav">
-                                        <a href="?page={{ page_obj.next_page_number }} " class="button transparent aqua">
-                                            <span class="label">Siguiente</span>
-                                                <i class="fa fa-chevron-right"></i>
-                                        </a>
-                                    </li>
-                                {% endif %}
-                            </ul>
-                        {% endif %}
-                    </div><!-- pagination -->
+
+
