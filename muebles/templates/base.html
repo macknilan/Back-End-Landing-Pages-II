@@ -27,69 +27,67 @@
         -->
     </head>
     <body>
-        <nav style="background-color: #EEC58E">
-            {% include 'menuvar.html' %}
-        </nav>
-        <main style="background-color: #F3DDB9">
-            {% block fpss %}
-            {% endblock fpss %}
-            {% block CategoryTemplate %}
-            {% endblock CategoryTemplate %}
-            {% block DetailTemplate %}
-            {% endblock DetailTemplate %}
-            {% block ContactTemplate %}
-            {% endblock ContactTemplate %}
-            {% block page_not_found_404 %}
-            {% endblock page_not_found_404 %}
-            {% block page_not_found_405 %}
-            {% endblock page_not_found_405 %}            
-
-
-        </main><!-- main -->
-<footer style="background-color: #C08257" class="page-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Powerd by</h5>
-                <p class="grey-text text-lighten-4"></p>
-                <a href="http://aws.amazon.com/what-is-cloud-computing">
-                    <img src="http://awsmedia.s3.amazonaws.com/AWS_logo_poweredby_black_127px.png" alt="Powered by AWS Cloud Computing">
-                </a>
-            </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Siguenos</h5>
-                    <ul>
-                        <a href="#" title="facebook"><i class="fa fa-facebook-official fa-2x"></i></a>
-                        <a href="#" title="twitter"><i class="fa fa-twitter fa-2x"></i></a>
-                        <a href="#" title="pinterest"><i class="fa fa-pinterest fa-2x"></i></a>
-                        <a href="#" title="google plus"><i class="fa fa-google-plus fa-2x"></i></a>
-                    </ul>
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Men&uacute;</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!" title="Comedores">Comedores</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!" title="Conicas">Conicas</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!" title="Chifoniers">Chifoniers</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!" title="Cunas">Cunas</a></li>
-                    </ul>
-                </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
+    <nav style="background-color: #EEC58E">
+        {% include 'menuvar.html' %}
+    </nav>
+    <main style="background-color: #F3DDB9">
+        {% block fpss %}
+        {% endblock fpss %}
+        {% block CategoryTemplate %}
+        {% endblock CategoryTemplate %}
+        {% block DetailTemplate %}
+        {% endblock DetailTemplate %}
+        {% block ContactTemplate %}
+        {% endblock ContactTemplate %}
+        {% block page_not_found_404 %}
+        {% endblock page_not_found_404 %}
+        {% block page_not_found_405 %}
+        {% endblock page_not_found_405 %}
+    </main><!-- main -->
+    <footer style="background-color: #C08257" class="page-footer">
         <div class="container">
-            © 2015 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">design by nomackayu@gmail.com with <i class="red-text fa fa-heart"></i></a>
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Powerd by</h5>
+                    <p class="grey-text text-lighten-4"></p>
+                    <a href="http://aws.amazon.com/what-is-cloud-computing">
+                        <img src="http://awsmedia.s3.amazonaws.com/AWS_logo_poweredby_black_127px.png" alt="Powered by AWS Cloud Computing">
+                    </a>
+                </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">Siguenos</h5>
+                        <ul>
+                            <a href="#" title="facebook"><i class="light-blue darken-4 fa fa-facebook-official fa-2x"></i></a>
+                            <a href="#" title="twitter"><i class="light-blue darken-4 fa fa-twitter fa-2x"></i></a>
+                            <a href="#" title="pinterest"><i class="light-blue darken-4 fa fa-pinterest fa-2x"></i></a>
+                            <a href="#" title="google plus"><i class="light-blue darken-4 fa fa-google-plus fa-2x"></i></a>
+                        </ul>
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">Men&uacute;</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!" title="Comedores">Comedores</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!" title="Conicas">Conicas</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!" title="Chifoniers">Chifoniers</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!" title="Cunas">Cunas</a></li>
+                        </ul>
+                    </div>
+            </div>
         </div>
-    </div>
-</footer>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2015 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">design by nomackayu@gmail.com with <i class="red accent-4 fa fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
 
 <!--script-->
     <!-- Compiled and minified JavaScript --><!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src={% static "js/jquery.min.js" %}></script><!-- jquery-2.1.4.min.js -->
     <!--<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src={% static "js/jquery.min.js" %}></script><!-- jquery-2.1.4.min.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
     <script type="text/javascript" src={% static "js/materialize.min.js" %}></script>
     <script type="text/javascript" src={% static "js/init.js "%}></script>
@@ -98,6 +96,8 @@
         $( document ).ready(function(){
             $('.slider').slider({height: 500});
             $('.materialboxed').materialbox();
+            $('.parallax').parallax();
+            $('#textarea1').trigger('autoresize');
         });
     </script>
 <!--script-->
