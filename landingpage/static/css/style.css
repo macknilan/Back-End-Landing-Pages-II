@@ -25,6 +25,14 @@ p {
   line-height: 2rem;
 }
 
+
+.fondo_de_madera
+{
+    background-image: url("/static/img/wood_bg.png");
+    /*background-repeat: repeat-x;*/
+}
+
+
 .redondeado{
   border-radius: 5%;
 }

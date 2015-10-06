@@ -27,10 +27,10 @@
         -->
     </head>
     <body>
-    <nav style="background-color: #EEC58E">
+    <nav style="background-color: #D7A265">
         {% include 'menuvar.html' %}
     </nav>
-    <main style="background-color: #F3DDB9">
+    <main class="fondo_de_madera">
         {% block fpss %}
         {% endblock fpss %}
         {% block CategoryTemplate %}
@@ -39,12 +39,14 @@
         {% endblock DetailTemplate %}
         {% block ContactTemplate %}
         {% endblock ContactTemplate %}
+        {% block Pyr %}
+        {% endblock Pyr %}
         {% block page_not_found_404 %}
         {% endblock page_not_found_404 %}
         {% block page_not_found_405 %}
         {% endblock page_not_found_405 %}
     </main><!-- main -->
-    <footer style="background-color: #C08257" class="page-footer">
+    <footer class="grey darken-4 page-footer">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
@@ -74,10 +76,13 @@
                     </div>
             </div>
         </div>
-        <div class="footer-copyright">
+        <div class="blue-grey darken-4 footer-copyright">
             <div class="container">
                 © 2015 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">design by nomackayu@gmail.com with <i class="red-text fa fa-heart"></i></a>
+                <span class="grey-text text-lighten-4 right"> design by 
+                    <a href="mailto:nomackayu@gmail.com">nomackayu</a>  with 
+                        <i class="red-text fa fa-heart"></i>
+                </span> 
             </div>
         </div>
     </footer>

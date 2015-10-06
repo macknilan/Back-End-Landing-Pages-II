@@ -66,6 +66,13 @@ class CunasListView(ListView):
         return queryset.filter(categoria__cat_mueble="cunas")
 
 
+class Pyr(TemplateView):
+    """
+    CLASE PARA MOSTRAR LAS PREGUNTAS Y RESPUESTAS
+    """
+    template_name = "Pyr.html"
+
+
 class ContactFormView(FormView):
     """
     CLASE PARA EL FORMULARIO DE CONTACTO, MANDA MAIL POR MEDIO DE GMAIL, NO SE OCUPA UN MODELO PARA GUARDARLO EN BD
