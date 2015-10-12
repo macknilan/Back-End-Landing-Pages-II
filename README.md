@@ -1,31 +1,15 @@
-# Back-End para Landing Pages
-Back-End para Landing Pages
-
-<p>Proyecto creado en Python & Djanto 1.8, para la creaci&oacute;n de una aplicaci&oacute;n que sirva como Back-End <br>
-para (ejemplo) varios proyectos.
+# Propuesta para proyecto
+<p>
+Propuesta de proyecto realizado para la empresa “Muebles y Diseños en Madera del Centro”, en Querétaro.
+El objetivo es mostrar tanto en computadoras, tabletas y móviles el catalogo de muebles por la empresa.<br>
+La aplicación esta realizada con:
 </p>
 <br>
-<strong>requirements.txt</strong>
-    <div>boto==2.38.0</div>
-    <div>decorator==4.0.2</div>
-    <div>Django==1.8.4</div>
-    <div>django-ckeditor==5.0.2</div>
-    <div>django-extensions==1.5.6</div>
-    <div>django-storages==1.1.8</div>
-    <div>ipdb==0.8.1</div>
-    <div>ipython==4.0.0</div>
-    <div>ipython-genutils==0.1.0</div>
-    <div>path.py==8.1</div>
-    <div>pexpect==3.3</div>
-    <div>pickleshare==0.5</div>
-    <div>Pillow==2.9.0</div>
-    <div>psycopg2==2.6.1</div>
-    <div>python-memcached==1.57</div>
-    <div>simplegeneric==0.8.1</div>
-    <div>six==1.9.0</div>
-    <div>sorl-thumbnail==12.3</div>
-    <div>traitlets==4.0.0</div>
-    <div>wheel==0.24.0</div>
+<strong>
+    <div>Front-end framework Materialize</div>
+    <div>Html5 y CSS3</div>
+    <div>Javascript, jQuery</div>
+    <div>Back-end framework django(python</div>
+</strong>
 <br>
-<hr>
-<h6>rodolfougaldeochoa@gmail.com</h6>
+<p>Hospedado en Amazon AWS C2, y almacenamiento de archivos en Amazon AWS S3</p>
