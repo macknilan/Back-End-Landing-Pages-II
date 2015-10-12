@@ -8,7 +8,7 @@ La aplicación esta realizada con:
     <div>Front-end framework Materialize</div>
     <div>Html5 y CSS3</div>
     <div>Javascript, jQuery</div>
-    <div>Back-end framework django(python</div>
+    <div>Back-end framework django(python)</div>
 </strong>
 <br>
 <p>Hospedado en Amazon AWS C2, y almacenamiento de archivos en Amazon AWS S3</p>
