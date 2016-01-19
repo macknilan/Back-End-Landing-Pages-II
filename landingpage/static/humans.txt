@@ -3,7 +3,8 @@
 
 # TEAM
 
-    Web master: Rodolfo Nicacio Ugalde Ochoa
+    Frontend: Rodolfo Nicacio Ugalde Ochoa
+    Backend: Rodolfo Nicacio Ugalde Ochoa
     Twitter: @nomackayu
     https://github.com/macknilan
     From:Tequisquiapa, Querétaro, México

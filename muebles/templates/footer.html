@@ -1,0 +1,41 @@
+<!--
+
+
+-->
+{% load thumbnail %}
+    <div class="container">
+        <div class="row">
+            <div class="col s3 m3 l3">
+                <h5 class="white-text">Men&uacute;</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="{% url 'comedores' %}" title="Comedores">Comedores</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{% url 'cocinas' %}" title="Cocinas">Cocinas</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{% url 'closets' %}" title="Closets">Chifoniers</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{% url 'puertas' %}" title="Puertas">Cunas</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{% url 'banos' %}" title="Ba&ntilde;os">Ba&ntilde;os</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{% url 'contacto' %}" title="Contacto">Contacto</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{% url 'preguntas-y-respuestas' %}" title="Preguntas y Respuestas">PyR</a></li>
+                </ul>
+            </div><!-- ./col l3 s12 -->
+            <div class="col s9 m9 l9">
+                <div id="owl-demo" class="owl-carousel owl-theme">
+                    {% for mueble in fotos_muebles %}
+                            {% thumbnail mueble.foto_1 "100x100" as img_galeria_1 %}
+                                <div class="item">
+                                    <img class="responsive-img z-depth-4 hoverable lazyOwl" data-src="{{ img_galeria_1.url }}">
+                                </div>
+                            {% endthumbnail %}
+                    {% endfor %}
+                </div>
+            </div><!-- ./col l8 s12 -->
+        </div><!-- ./row -->
+    </div><!-- ./container -->
+    <div class="blue-grey darken-4 footer-copyright">
+        <div class="container">
+            © 2016 Copyright Text
+            <span class="grey-text text-lighten-4 right"> design by
+                <a href="mailto:nomackayu@gmail.com">nomackayu</a>  with
+                    <i class="red-text fa fa-heart"></i>
+            </span>
+        </div>
+    </div><!-- ./blue-grey darken-4 footer-copyright -->

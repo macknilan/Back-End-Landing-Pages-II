@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['MUEBLERIALLAVE']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '52.8.155.215', 'muebleria.konetl.co']
 # ALLOWED_HOSTS = ['*']
@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'landingpage',
+    # 'landingpage',
     'categorias',
     'muebles',
     'ckeditor',
@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'storages',
     'sorl.thumbnail',
 )
+
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',  # ESTO PARA USAR CACHING PERO EN PRODUCCION EN LA 1ra LINEA
@@ -59,7 +60,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.cache.FetchFromCacheMiddleware',  # ESTO PARA USAR CACHING PERO EN PRODUCCION EN LA ULTIMA LINEA
 )
 
+
 ROOT_URLCONF = 'landingpage.urls'
+
 
 TEMPLATES = [
     {
@@ -71,15 +74,17 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 # LISTA DE MUEBLES RELACIONADOS COMO LINKS EN INFERIOR DE PAGINA
-                'landingpage.context_processors.lista_link_muebles_relacionados',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'landingpage.context_processors.lista_link_muebles_relacionados',
+                'landingpage.context_processors.FooterMiniGalery',
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'landingpage.wsgi.application'
 
@@ -99,6 +104,8 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+
 # ################ MEMCACHED ################
 CACHES = {
     'default': {
@@ -107,7 +114,7 @@ CACHES = {
     }
 }
 # ################ MEMCACHED ################
-# ################ REDIS ################
+# ################## REDIS ##################
 # CACHES = {
 #     'default': {
 #         'BACKEND': 'redis_cache.RedisCache',
@@ -119,10 +126,10 @@ CACHES = {
 #         }
 #     }
 # }
-# 
+#
 # THUMBNAIL_REDIS_HOST = 'localhost'
 # THUMBNAIL_REDIS_PORT = 6379
-# ################ REDIS ################
+# ################## REDIS ##################
 
 # DATABASES = {
 #     'default': {
@@ -137,7 +144,6 @@ CACHES = {
 
 LANGUAGE_CODE = 'en-us'
 
-# TIME_ZONE = 'UTC'
 TIME_ZONE = 'America/Mexico_City'
 
 USE_I18N = True
@@ -225,24 +231,33 @@ EMAIL_HOST_PASSWORD = 'EMAIL_HOST_PASSWORD'
 # ###################### DJANGO-CKEDITOR ######################
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'UltraFull',
-        'height': 300,
-        'toolbar_UltraFull': [
-            ['Source', '-', 'Save', 'NewPage', 'DocProps', 'Preview', 'Print', '-', 'Templates'],
-            ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'],
-            ['Find', 'Replace', '-', 'SelectAll', '-', 'SpellChecker', 'Scayt'],
-#            ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
-            ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-',
-                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl'],
-            ['Link', 'Unlink', 'Anchor'],
-            ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak'],
-            ['Styles', 'Format', 'Font', 'FontSize'],
-            ['TextColor', 'BGColor'],
-            ['Maximize', 'ShowBlocks', '-', 'About'],
-        ],
+        'awesome_ckeditor': {
+            'toolbar': 'Basic',
+        },
         'forcePasteAsPlainText': True,
-    },
+    }
 }
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'toolbar': 'UltraFull',
+#         'height': 300,
+#         'toolbar_UltraFull': [
+#             ['Source', '-', 'Save', 'NewPage', 'DocProps', 'Preview', 'Print', '-', 'Templates'],
+#             ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'],
+#             ['Find', 'Replace', '-', 'SelectAll', '-', 'SpellChecker', 'Scayt'],
+# #            ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
+#             ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
+#             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-',
+#                 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl'],
+#             ['Link', 'Unlink', 'Anchor'],
+#             ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak'],
+#             ['Styles', 'Format', 'Font', 'FontSize'],
+#             ['TextColor', 'BGColor'],
+#             ['Maximize', 'ShowBlocks', '-', 'About'],
+#         ],
+#         'forcePasteAsPlainText': True,
+#     },
+# }
 # ###################### DJANGO-CKEDITOR ######################
-
+#
+#

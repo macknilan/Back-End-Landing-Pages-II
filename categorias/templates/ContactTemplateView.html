@@ -3,10 +3,10 @@
 {% block title %} Contacto {% endblock title %}
 {% block ContactTemplate %}
     <div class="row">
-    <section>   
+    <section>
         <article>
             <div class="parallax-container">
-                <div id="googleMap" style="height: 400px"></div>
+                <div id="mapa" style="height: 400px"></div>
             </div>
         </article>
     </section>
@@ -54,32 +54,6 @@
                 </button>
         </form>
     </div><!-- .row container -->
-
-
 <!-- script -->
-
-<script>
-    $( document ).ready(function(){
-        $('#textarea1').trigger('autoresize');
-    });
-</script>
-
-<script>
-    function initialize() {
-        var mapCanvas = new google.maps.LatLng(20.587929, -100.387826);
-            var mapOptions = {
-                MapTypeId: google.maps.MapTypeId.HYBRID,
-                zoom: 14,
-                center: mapCanvas
-            }
-        var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
-        var marker = new google.maps.Marker({
-            position: mapCanvas,
-            map: map,
-            title: 'Santiago de Queretaro'
-        });
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-</script>
 <!-- script -->
 {% endblock ContactTemplate %}

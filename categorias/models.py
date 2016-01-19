@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 import os
 from django.db import models
@@ -8,6 +9,8 @@ from django.db.models.signals import pre_delete
 from django.utils.text import slugify
 # from django.utils.html import format_html
 from django.utils.crypto import get_random_string
+from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext_lazy as _
 from sorl.thumbnail import ImageField
 
 
@@ -18,11 +21,11 @@ class SlugMixin(object):
         # count = 2
         # fecha_ano = datetime.date.year()
         slug = slug_text
-
+        if (model._default_manager.filter(slug=slug).exists()):
+            raise ValidationError(_('ESTE MENSAJE ESTA A PRUEBA - ERROR ESTO ESTA REPETIDO'))
         # while(model._default_manager.filter(slug=slug).exists()):
         #     slug = '{0}-{1}'.format(slug_text, count)
         return slug
-
 
 def change_file_name(self, imagefilename):
     """
@@ -39,13 +42,13 @@ class Categoria(SlugMixin, models.Model):
         ('ninguno', 'Ninguno'),
         ('comedores', 'Comedores'),
         ('cocinas', 'Cocinas'),
-        ('cunas', 'Cunas'),
-        ('chifoniers', 'Chifoniers'),
-        ('recamaras', 'Recamaras'),
+        ('closets', 'Closets'),
+        ('puertas', 'Puertas'),
+        ('banos', 'Banos'),
         )
     cat_mueble = models.CharField("Categoria del mueble", max_length=10, choices=CAT_M, default='ninguno')
     imagen_categoria = ImageField("Foto de Categoria", upload_to=change_file_name, max_length=50)
-    slug = models.CharField(max_length=140, unique=True, blank=True)
+    slug = models.CharField(max_length=140, blank=True, unique=True)
 
     def get_absolute_url(self):
         return '/%s/' % self.cat_mueble
@@ -61,6 +64,9 @@ class Categoria(SlugMixin, models.Model):
 #        """
 #        return format_html('<img src="%s">' % self.imagen_categoria.url)
 #    foto_categoria.allow_tags = True
+
+    def __unicode__(self):
+        return self.cat_mueble
 
     def __str__(self):
         return self.cat_mueble

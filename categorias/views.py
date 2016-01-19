@@ -16,7 +16,7 @@ class ComedoresListView(ListView):
     """
     model = Mueble
     template_name = "ComedoresCategoryTemplateView.html"
-    paginate_by = 4
+    paginate_by = 1
     ordering = ["id"]
 
     def get_queryset(self):
@@ -30,7 +30,7 @@ class CocinasListView(ListView):
     """
     model = Mueble
     template_name = "CocinasCategoryTemplateView.html"
-    paginate_by = 4
+    paginate_by = 1
     ordering = ["id"]
 
     def get_queryset(self):
@@ -38,32 +38,46 @@ class CocinasListView(ListView):
         return queryset.filter(categoria__cat_mueble="cocinas")
 
 
-class ChifoniersListView(ListView):
+class ClosetsListView(ListView):
     """
-    CLASE PARA DESPLEGAR LOS CHIFONIERS EN LISTA
+    CLASE PARA DESPLEGAR LOS CLOSETS EN LISTA
     """
     model = Mueble
-    template_name = "ChifoniersCategoryTemplateView.html"
-    paginate_by = 4
+    template_name = "ClosetsCategoryTemplateView.html"
+    paginate_by = 1
     ordering = ["id"]
 
     def get_queryset(self):
-        queryset = super(ChifoniersListView, self).get_queryset()
-        return queryset.filter(categoria__cat_mueble="chifoniers")
+        queryset = super(ClosetsListView, self).get_queryset()
+        return queryset.filter(categoria__cat_mueble="closets")
 
 
-class CunasListView(ListView):
+class PuertasListView(ListView):
     """
-    CLASE PARA DESPLEGAR LOS CUNAS EN LISTA
+    CLASE PARA DESPLEGAR LAS PUERTAS EN LISTA
     """
     model = Mueble
-    template_name = "CunasCategoryTemplateView.html"
-    paginate_by = 4
+    template_name = "PuertasCategoryTemplateView.html"
+    paginate_by = 1
     ordering = ["id"]
 
     def get_queryset(self):
-        queryset = super(CunasListView, self).get_queryset()
-        return queryset.filter(categoria__cat_mueble="cunas")
+        queryset = super(PuertasListView, self).get_queryset()
+        return queryset.filter(categoria__cat_mueble="puertas")
+
+
+class BanosListView(ListView):
+    """
+    CLASE PARA DESPLEGAR LAS BAÑOS EN LISTA
+    """
+    model = Mueble
+    template_name = "BanosCategoryTemplateView.html"
+    paginate_by = 1
+    ordering = ["id"]
+
+    def get_queryset(self):
+        queryset = super(BanosListView, self).get_queryset()
+        return queryset.filter(categoria__cat_mueble="banos")
 
 
 class Pyr(TemplateView):

@@ -63,14 +63,19 @@
                 <div class="chip"><i class="fa fa-tag"></i> <a href="{% url 'detailcocinas' cocina.slug %}" title="{{cocina.modelo}}">{{ cocina.modelo }}</a></div>
             {% endif %}
         {% endfor %}
-        {% for chifonier in categoria_mueble_chifonier %}
-            {% if "chifoniers" in object.get_absolute_url and object.modelo != chifonier.modelo %}
-                <div class="chip"><i class="fa fa-tag"></i> <a href="{% url 'detailchifoniers' chifonier.slug %}" title="{{chifonier.modelo}}">{{ chifonier.modelo }}</a></div>
+        {% for closet in categoria_mueble_closets %}
+            {% if "closets" in object.get_absolute_url and object.modelo != closet.modelo %}
+                <div class="chip"><i class="fa fa-tag"></i> <a href="{% url 'detailclosets' closet.slug %}" title="{{closet.modelo}}">{{ closet.modelo }}</a></div>
             {% endif %}
         {% endfor %}
-        {% for cunas in categoria_mueble_cuna %}
-            {% if "cunas" in object.get_absolute_url and object.modelo != cunas.modelo %}
-                <div class="chip"><i class="fa fa-tag"></i> <a href="{% url 'detailcunas' cunas.slug %}" title="{{cunas.modelo}}">{{ cunas.modelo }}</a></div>
+        {% for puerta in categoria_mueble_puertas %}
+            {% if "puertas" in object.get_absolute_url and object.modelo != puerta.modelo %}
+                <div class="chip"><i class="fa fa-tag"></i> <a href="{% url 'detailpuertas' puerta.slug %}" title="{{puerta.modelo}}">{{ puerta.modelo }}</a></div>
+            {% endif %}
+        {% endfor %}
+        {% for bano in categoria_mueble_banos %}
+            {% if "banos" in object.get_absolute_url and object.modelo != bano.modelo %}
+                <div class="chip"><i class="fa fa-tag"></i> <a href="{% url 'detailbanos' bano.slug %}" title="{{bano.modelo}}">{{ bano.modelo }}</a></div>
             {% endif %}
         {% endfor %}
     </div><!-- .row container -->

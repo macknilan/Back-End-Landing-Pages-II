@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 import os
 from django.db import models
@@ -39,11 +40,11 @@ class Mueble(SlugMixin, models.Model):
     descripcion = RichTextField()
     # dimensiones = models.TextField("Dimenciones del mueble", max_length=240)
     dimensiones = RichTextField()
-    foto_1 = ImageField("Fotos del mueble 1", upload_to=change_file_name, max_length=50)  # blank=False POR DEFAULT
-    foto_2 = ImageField("Fotos del mueble 2", upload_to=change_file_name, max_length=50)
-    foto_3 = ImageField("Fotos del mueble 3", upload_to=change_file_name, max_length=50)
-    foto_4 = ImageField("Fotos del mueble 4", upload_to=change_file_name, max_length=50)
-    foto_5 = ImageField("Fotos del mueble 5", upload_to=change_file_name, max_length=50)
+    foto_1 = ImageField("Fotos del mueble 1", upload_to=change_file_name, max_length=50, default='static/IMAGEN_POR_DEFAULT_1200_1000.png')  # blank=False POR DEFAULT
+    foto_2 = ImageField("Fotos del mueble 2", upload_to=change_file_name, max_length=50, default='static/IMAGEN_POR_DEFAULT_1200_1000.png')
+    foto_3 = ImageField("Fotos del mueble 3", upload_to=change_file_name, max_length=50, default='static/IMAGEN_POR_DEFAULT_1200_1000.png')
+    foto_4 = ImageField("Fotos del mueble 4", upload_to=change_file_name, max_length=50, default='static/IMAGEN_POR_DEFAULT_1200_1000.png')
+    foto_5 = ImageField("Fotos del mueble 5", upload_to=change_file_name, max_length=50, default='static/IMAGEN_POR_DEFAULT_1200_1000.png')
     modelo = models.CharField("Modelo (Nombre) ", max_length=40)
     oferta = models.SmallIntegerField("¿Oferta?", default=0)
     """
@@ -61,13 +62,17 @@ class Mueble(SlugMixin, models.Model):
         self.slug = self.get_slug(self.modelo, Mueble)
         super(Mueble, self).save(*args, **kwargs)
 
+    def __unicode__(self):
+        return "%s - %s" % (self.modelo, self.descripcion)
+
     def __str__(self):
         return "%s - %s" % (self.modelo, self.descripcion)
 
-
 @receiver(pre_delete, sender=Mueble)
 def delte_fotos(sender, instance, **kwargs):
-    """BORRAR LOS ARCHIVOS DE LA CARPETA DESPUES DE ELIMINAAR DE LA BD"""
+    """
+    BORRAR LOS ARCHIVOS DE LA CARPETA DESPUES DE ELIMINAAR DE LA BD
+    """
     instance.foto_1.delete(False)
     instance.foto_2.delete(False)
     instance.foto_3.delete(False)

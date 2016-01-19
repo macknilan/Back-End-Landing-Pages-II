@@ -23,4 +23,3 @@ class CategoriaAdmin(AdminImageMixin, admin.ModelAdmin):
         return '<img src="%s">' % get_thumbnail(obj.imagen_categoria, '450x450', quality=99).url
     foto_categoria.allow_tags = True
 #    import ipdb; ipdb.set_trace() # ESTO ES PARA DEBUGEARC
-

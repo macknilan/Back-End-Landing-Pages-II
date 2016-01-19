@@ -6,6 +6,7 @@ from django.views.generic import ListView, DetailView
 from categorias.models import Categoria
 from .models import Mueble
 
+
 def page_404(request):
     """
     FUNCION PARA PERSONALIZAR LA PAGINA DE ERROR 404 _FALTA SOLUCIONAR_
@@ -69,27 +70,9 @@ class CocinasTemplateDetailView(DetailView):
         return context
 
 
-class ChifoniersTemplateDetailView(DetailView):
+class ClosetsTemplateDetailView(DetailView):
     """
-    CLASE PARA MOSTRAR LOS CHIFONIERS EN FORMA DE DETALLE/INDIVIDUAL
-    """
-    model = Mueble
-    template_name = "MuebleTemplateDetailView.html"
-
-    def get_queryset(self):
-        if self.kwargs.get('slug'):
-            queryset = self.model.objects.filter(slug=self.kwargs['slug'])
-        return queryset
-
-    def get_content_data(self, **kwargs):
-        context = super(ChifoniersTemplateDetailView, self).get_context_data(**kwargs)
-        context['categoria'] = 'chifoniers'
-        return context
-
-
-class CunasTemplateDetailView(DetailView):
-    """
-    CLASE PARA MOSTRAR LOS CUNAS EN FORMA DE DETALLE/INDIVIDUAL
+    CLASE PARA MOSTRAR LOS CLOSETS EN FORMA DE DETALLE/INDIVIDUAL
     """
     model = Mueble
     template_name = "MuebleTemplateDetailView.html"
@@ -100,6 +83,43 @@ class CunasTemplateDetailView(DetailView):
         return queryset
 
     def get_content_data(self, **kwargs):
-        context = super(CunasTemplateDetailView, self).get_context_data(**kwargs)
-        context['categoria'] = 'cunas'
+        context = super(ClosetsTemplateDetailView, self).get_context_data(**kwargs)
+        context['categoria'] = 'closets'
         return context
+
+
+class PuertasTemplateDetailView(DetailView):
+    """
+    CLASE PARA MOSTRAR LAS PUERTAS EN FORMA DE DETALLE/INDIVIDUAL
+    """
+    model = Mueble
+    template_name = "MuebleTemplateDetailView.html"
+
+    def get_queryset(self):
+        if self.kwargs.get('slug'):
+            queryset = self.model.objects.filter(slug=self.kwargs['slug'])
+        return queryset
+
+    def get_content_data(self, **kwargs):
+        context = super(PuertasTemplateDetailView, self).get_context_data(**kwargs)
+        context['categoria'] = 'puertas'
+        return context
+
+
+class BanosTemplateDetailView(DetailView):
+    """
+    CLASE PARA MOSTRAR LOS BANOS EN FORMA DE DETALLE/INDIVIDUAL
+    """
+    model = Mueble
+    template_name = "MuebleTemplateDetailView.html"
+
+    def get_queryset(self):
+        if self.kwargs.get('slug'):
+            queryset = self.model.objects.filter(slug=self.kwargs['slug'])
+        return queryset
+
+    def get_content_data(self, **kwargs):
+        context = super(BanosTemplateDetailView, self).get_context_data(**kwargs)
+        context['categoria'] = 'banos'
+        return context
+

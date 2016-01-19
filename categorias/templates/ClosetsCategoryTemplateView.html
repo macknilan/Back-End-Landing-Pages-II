@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% comment %}  PLANTILLA PARA MOSTRAR LAS CATEGORIAS DE LOS MUEBLES {% endcomment %}
+{% block title %} Closets {% endblock title %}
+{% block CategoryTemplate %}
+    <div class="row container">
+        <article><br>
+            {% for mueble in object_list %}
+                {% thumbnail mueble.foto_1 "1600x1200" as imagen_closets_1 %}
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="responsive-img z-depth-4 materialboxed" src="{{ imagen_closets_1.url }}">
+                                <span class="card-title">Closets</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endthumbnail %}
+                {% thumbnail mueble.foto_2 "1600x1200" as imagen_closets_2 %}
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="responsive-img z-depth-4 materialboxed" src="{{ imagen_closets_2.url }}">
+                                <span class="card-title">Closets</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endthumbnail %}
+                {% thumbnail mueble.foto_3 "1600x1200" as imagen_closets_3 %}
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="responsive-img z-depth-4 materialboxed" src="{{ imagen_closets_3.url }}">
+                                <span class="card-title">Closets</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endthumbnail %}
+                {% thumbnail mueble.foto_4 "1600x1200" as imagen_closets_4 %}
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="responsive-img z-depth-4 materialboxed" src="{{ imagen_closets_4.url }}">
+                                <span class="card-title">Closets</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endthumbnail %}
+                {% thumbnail mueble.foto_5 "1600x1200" as imagen_closets_5 %}
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="responsive-img z-depth-4 materialboxed" src="{{ imagen_closets_5.url }}">
+                                <span class="card-title">Closets</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endthumbnail %}
+            {% endfor %}
+        </article>
+    </div><!--.row container-->
+    {% include 'pagination_muebles_list.html' %}
+{% endblock CategoryTemplate %}
+<!--
+    <div class="row container">
+        <article><br>
+            {% for mueble in object_list %}
+                {% thumbnail mueble.foto_1 "1600x1200" as imagen_closets %}
+                    <div class="col s12 m12 l6">
+                        <div class="card redondeado z-depth-4">
+                            <div class="card-image">
+                                <a href="{% url 'detailclosets' mueble.slug %}" title="{{ mueble.modelo }}">
+                                    <img class="responsive-img" src="{{ imagen_closets.url }}"></a>
+                                <span class="card-title">{{ mueble.modelo }}</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endthumbnail %}
+            {% endfor %}
+        </article>
+    </div> --><!--.row container-->
+
+
+
+
+
+
