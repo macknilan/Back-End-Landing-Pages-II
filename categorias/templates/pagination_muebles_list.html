@@ -11,25 +11,23 @@
     {% if is_paginated %}
         <!-- <ul class="clear-after reset plain"> -->
             {% if page_obj.has_previous %}
-                <div class="waves-effect col s1 m1 l1">
+                <div class="waves-effect left">
                     <a href="?page={{ page_obj.previous_page_number }}">
-                        <i class="material-icons">chevron_left</i></a>
+                        <i class="small material-icons">arrow_back</i></a>
                 </div>
             {% else %}
                 <div class="waves-effect col s1 m1 l1">
                     <a href="#" class="button transparent aqua">
-                        <i class="material-icons">chevron_left</i></a>
-                </div>                                
+                        <i class="small material-icons">arrow_back</i></a>
+                </div>
             {% endif %}
             {% if page_obj.has_next %}
-                <div class="waves-effect col offset-s10 offset-m10 offset-l10">
+                <div class="waves-effect right">
                     <a href="?page={{ page_obj.next_page_number }}">
-                            <i class="material-icons">chevron_right</i></a>
+                            <i class="small material-icons">arrow_forward</i></a>
                 </div>
             {% endif %}
         <!-- </ul> -->
     {% endif %}
 </div><!-- .row container -->
-
-
 
