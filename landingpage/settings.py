@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['MUEBLERIALLAVE']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '52.8.114.189']
 # ALLOWED_HOSTS = ['*']
@@ -174,12 +174,8 @@ if DEBUG:
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     )
 
-    # PARA PONER CACHE LOS ARCHIVOS ESTATICOS EN PRODUCCION DEBUG = False
-    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
-    # PARA PONER CACHE LOS ARCHIVOS ESTATICOS EN PRODUCCION
-
     MEDIA_URL = '/media/'
-#    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     MEDIA_ROOT = os.sep.join(
         os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
 
@@ -201,6 +197,10 @@ if DEBUG is False:
         # BUSCA LOS ARCHIVOS ESTATICOS EN LA CARPETAS DE LAS APLICACIONES
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     )
+
+    # PARA PONER CACHE LOS ARCHIVOS ESTATICOS EN PRODUCCION DEBUG = False
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
+    # PARA PONER CACHE LOS ARCHIVOS ESTATICOS EN PRODUCCION
 
     AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
     AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
