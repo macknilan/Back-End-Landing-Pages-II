@@ -26,13 +26,24 @@ p {
   line-height: 2rem;
 }
 
+.nombrelogo
+{
+    color: #E7BA95 !important;
+    font-family: 'Marck Script';
+    font-size: 2.0em !important; 
+    line-height: 1.1em;
+    text-align: center;
+    text-shadow: 0px 0px 0px rgba(245, 245, 245, 0), 1px 1px 4px rgba(1, 22, 39, 0.7);
+    -webkit-text-shadow: 0px 0px 0px rgba(245, 245, 245, 0), 1px 1px 4px rgba(1, 22, 39, 0.7);
+    -moz-text-shadow: 0px 0px 0px rgba(245, 245, 245, 0), 1px 1px 4px rgba(1, 22, 39, 0.7);
+    -o-text-shadow: 0px 0px 0px rgba(245, 245, 245, 0), 1px 1px 4px rgba(1, 22, 39, 0.7);
+}
 
 .fondo_de_madera
 {
     background-image: url("/static/img/wood_bg.png");
     /*background-repeat: repeat-x;*/
 }
-
 
 .redondeado{
   border-radius: 5%;
@@ -48,9 +59,10 @@ p {
   height: auto;
   color: rgba(255,255,255,.9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
+
+.parallax-container .section {
+  width: 100%;
+}
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
@@ -71,6 +83,7 @@ p {
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
   font-size: inherit;
 }
@@ -79,22 +92,31 @@ footer.page-footer {
   margin: 0;
 }
 
-.nombrelogo
-{
-    color: #E7BA95 !important;
-    font-family: 'Marck Script';
-    font-size: 2.0em !important; 
-    line-height: 1.1em;
-    text-align: center;
-    text-shadow: 0px 0px 0px rgba(245, 245, 245, 0), 1px 1px 4px rgba(1, 22, 39, 0.7);
-    -webkit-text-shadow: 0px 0px 0px rgba(245, 245, 245, 0), 1px 1px 4px rgba(1, 22, 39, 0.7);
-    -moz-text-shadow: 0px 0px 0px rgba(245, 245, 245, 0), 1px 1px 4px rgba(1, 22, 39, 0.7);
-    -o-text-shadow: 0px 0px 0px rgba(245, 245, 245, 0), 1px 1px 4px rgba(1, 22, 39, 0.7);
-}
-
 .fpss_bottom
 {
   margin-bottom: 0;
+}
+
+.piedepagina_copyright
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.linux::after
+{
+    content: url("/static/img/tux_linux.ico");
+}
+
+.django::after
+{
+    content: url("/static/img/django.ico");
+}
+
+.awsamazon::after
+{
+    content: url("https://a0.awsstatic.com/main/images/site/favicon.ico");
 }
 
 #owl-demo .item{

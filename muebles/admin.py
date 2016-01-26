@@ -20,21 +20,21 @@ class MuebleAdmin(AdminImageMixin, admin.ModelAdmin):
     MOSTRAR IMAGENES DEL ADMINISTRADOR
     """
     def foto_uno(self, obj):
-        return '<img src="%s">' % get_thumbnail(obj.foto_1, '450x450', quality=99).url
+        return '<img src="%s">' % get_thumbnail(obj.foto_1, '300x300', quality=99).url
     foto_uno.allow_tags = True
 
     def foto_dos(self, obj):
-        return '<img src="%s">' % get_thumbnail(obj.foto_2, '450x450', quality=99).url
+        return '<img src="%s">' % get_thumbnail(obj.foto_2, '300x300', quality=99).url
     foto_dos.allow_tags = True
 
     def foto_tres(self, obj):
-        return '<img src="%s">' % get_thumbnail(obj.foto_3, '450x450', quality=99).url
+        return '<img src="%s">' % get_thumbnail(obj.foto_3, '300x300', quality=99).url
     foto_tres.allow_tags = True
 
     def foto_cuatro(self, obj):
-        return '<img src="%s">' % get_thumbnail(obj.foto_4, '450x450', quality=99).url
+        return '<img src="%s">' % get_thumbnail(obj.foto_4, '300x300', quality=99).url
     foto_cuatro.allow_tags = True
 
     def foto_cinco(self, obj):
-        return '<img src="%s">' % get_thumbnail(obj.foto_5, '450x450', quality=99).url
+        return '<img src="%s">' % get_thumbnail(obj.foto_5, '300x300', quality=99).url
     foto_cinco.allow_tags = True
