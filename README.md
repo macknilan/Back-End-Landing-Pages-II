@@ -6,13 +6,13 @@ La aplicación esta realizada con:
 </p>
 <strong>
 <ul>
-    <lo>Linux distro Debian.</lo>
-    <lo>Lenguaje de programación python con su framework django 1.8</lo>
-    <lo>Html5(Framework Materialize), CSS3, JavaScript, jQuery.</lo>
-    <lo>Base de datos PostgreSQL.</lo>
-    <lo>Hospedado en Amazon C2.</lo>
-    <lo>Se utiliza Amazon Web Services, S3 servir las imágenes, audio y video.</lo>
-    <lo>Se ocupo el sistema de control de versiones git & github.</lo>
+    <li>Linux distro Debian.</li>
+    <li>Lenguaje de programación python con su framework django 1.8</li>
+    <li>Html5(Framework Materialize), CSS3, JavaScript, jQuery.</li>
+    <li>Base de datos PostgreSQL.</li>
+    <li>Hospedado en Amazon C2.</li>
+    <li>Se utiliza Amazon Web Services, S3 servir las imágenes, audio y video.</li>
+    <li>Se ocupo el sistema de control de versiones git & github.</li>
 </ul>
 </strong>
 
