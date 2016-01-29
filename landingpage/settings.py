@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['MUEBLERIALLAVE']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '52.8.119.177']
 # ALLOWED_HOSTS = ['*']
@@ -89,7 +89,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'landingpage.wsgi.application'
 
 
-# ################ DATABASE ################
+# #--------------# DATABASE #--------------#
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
@@ -106,15 +106,15 @@ DATABASES = {
 }
 
 
-# ################ MEMCACHED ################
+# #--------------# MEMCACHED #--------------#
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '127.0.0.1:11211',
     }
 }
-# ################ MEMCACHED ################
-# ################## REDIS ##################
+# #--------------# MEMCACHED #--------------#
+# #----------------# REDIS #----------------#
 # CACHES = {
 #     'default': {
 #         'BACKEND': 'redis_cache.RedisCache',
@@ -129,7 +129,7 @@ CACHES = {
 #
 # THUMBNAIL_REDIS_HOST = 'localhost'
 # THUMBNAIL_REDIS_PORT = 6379
-# ################## REDIS ##################
+# #----------------# REDIS #----------------#
 
 # DATABASES = {
 #     'default': {
@@ -137,7 +137,7 @@ CACHES = {
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-# ################ DATABASE ################
+# #--------------# DATABASE #--------------#
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -180,12 +180,11 @@ if DEBUG:
         os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
 
 
-# ###################### AWS S3 SETTINGS ######################
-# ############ CKEDITOR ############
-# AWS_QUERYSTRING_AUTH = False
-# CKEDITOR_UPLOAD_PATH = "uploads_by_ckeditor/"
-# ############ CKEDITOR ############
+# #--------------------# AWS S3 SETTINGS #--------------------#
 if DEBUG is False:
+    # #----------# CKEDITOR #----------#
+    AWS_QUERYSTRING_AUTH = False
+    # #----------# CKEDITOR #----------#
 
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'landingpage/static'),
@@ -215,27 +214,38 @@ if DEBUG is False:
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
-# ###################### AWS S3 SETTINGS ######################
+# #--------------------# AWS S3 SETTINGS #--------------------#
 # ############################################ STATIC & MEDIA FIELDS ############################################
 
-# ################## CKEDITOR ##################
-CKEDITOR_UPLOAD_PATH = "uploads_by_ckeditor/"
-# ################## CKEDITOR ##################
-# ######################## SEND EMAILS ########################
+# #----------------------# SEND EMAILS #----------------------#
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'EMAIL_HOST'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'EMAIL_HOST_USER'
 EMAIL_HOST_PASSWORD = 'EMAIL_HOST_PASSWORD'
-# ######################## SEND EMAILS ########################
-# ###################### DJANGO-CKEDITOR ######################
+# #----------------------# SEND EMAILS #----------------------#
+# #--------------------# DJANGO-CKEDITOR #--------------------#
+CKEDITOR_UPLOAD_PATH = "uploads_by_ckeditor/"
+
 CKEDITOR_CONFIGS = {
     'default': {
-        'awesome_ckeditor': {
-            'toolbar': 'Basic',
-        },
-        'forcePasteAsPlainText': True,
-    }
+        'toolbar': 'Classic',
+        'height': 200,
+        'width': 600,
+        'toolbar_Classic': [
+            ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'],
+            ['Scayt'],
+            ['Link', 'Unlink', 'Anchor'],
+            ['Image', 'Table', 'HorizontalRule', 'SpecialChar'],
+            ['Maximize'],
+            ['Source'],
+            '/',
+            ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'],
+            ['Styles', 'Format'],
+            ['About'],
+        ],
+    },
 }
 # CKEDITOR_CONFIGS = {
 #     'default': {
@@ -258,6 +268,5 @@ CKEDITOR_CONFIGS = {
 #         'forcePasteAsPlainText': True,
 #     },
 # }
-# ###################### DJANGO-CKEDITOR ######################
-#
+# #--------------------# DJANGO-CKEDITOR #--------------------#
 #

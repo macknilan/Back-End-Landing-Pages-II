@@ -5,7 +5,7 @@ import os
 from django.db import models
 from django.dispatch import receiver
 from django.db.models.signals import pre_delete
-# from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse
 from django.utils.text import slugify
 # from django.utils.html import format_html
 from django.utils.crypto import get_random_string
@@ -51,8 +51,8 @@ class Categoria(SlugMixin, models.Model):
     slug = models.CharField(max_length=140, blank=True, unique=True)
 
     def get_absolute_url(self):
-        return '/%s/' % self.cat_mueble
-        # return reverse('detailcomedores', kwargs={"slug": self.slug})
+        return reverse('categorias:comedores', kwargs={"slug": self.slug})
+        # return '/%s/' % self.cat_mueble
 
     def save(self, *args, **kargs):
         self.slug = self.get_slug(self.cat_mueble, Categoria)

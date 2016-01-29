@@ -1,6 +1,8 @@
 # NO COPIAR ARCHIVOS *.pyc
 *.pyc
-
+# IGNORAR TODA LA CARPETA MEDIA
+media/*
+#
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
