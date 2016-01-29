@@ -15,6 +15,4 @@ La aplicación esta realizada con:
     <li>Se ocupo el sistema de control de versiones git & github.</li>
 </ul>
 </strong>
-
-<br>
 <p>Hospedado en Amazon AWS C2, y almacenamiento de archivos en Amazon AWS S3</p>
