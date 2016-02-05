@@ -24,7 +24,7 @@ SECRET_KEY = os.environ['MUEBLERIALLAVE']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '.rodolfougalde.xyz']
+ALLOWED_HOSTS = ['.rodolfougalde.xyz']
 # ALLOWED_HOSTS = ['*']
 
 
