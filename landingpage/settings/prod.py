@@ -17,7 +17,7 @@ AWS_QUERYSTRING_AUTH = False
 # #----------# CKEDITOR #----------#
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'landingpage/static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 STATICFILES_FINDERS = (
