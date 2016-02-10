@@ -89,7 +89,8 @@ class Pyr(TemplateView):
 
 class ContactFormView(FormView):
     """
-    CLASE PARA EL FORMULARIO DE CONTACTO, MANDA MAIL POR MEDIO DE GMAIL, NO SE OCUPA UN MODELO PARA GUARDARLO EN BD
+    CLASE PARA EL FORMULARIO DE CONTACTO, MANDA MAIL POR MEDIO DE GMAIL,
+    NO SE OCUPA UN MODELO PARA GUARDARLO EN BD
     """
     template_name = 'ContactTemplateView.html'
     form_class = ContactForm

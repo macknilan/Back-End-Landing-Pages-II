@@ -2,11 +2,14 @@
 
 from django import forms
 from django.core.validators import RegexValidator
+from snowpenguin.django.recaptcha2.fields import ReCaptchaField
+from snowpenguin.django.recaptcha2.widgets import ReCaptchaWidget
 
 
 class ContactForm(forms.Form):
     """
-    FORMULARIO PARA MOSTRAR EN CONTACTO, VALIDA LOS CAMPOS, NO SE OCUPA UN MODELO PARA GUARDARLO EN BD
+    FORMULARIO PARA MOSTRAR EN CONTACTO, VALIDA LOS CAMPOS,
+    NO SE OCUPA UN MODELO PARA GUARDARLO EN BD
     """
     subject = forms.CharField(widget=forms.TextInput(attrs={
         'max_length': 50, 'size': 50, 'class': 'validate', 'title': 'Nombre(s)/Titulo',
@@ -21,3 +24,4 @@ class ContactForm(forms.Form):
         'title': 'Escribe aquì tus comentarios', 'rows': 10, 'cols': 10, 'required': True,
         'id': 'textarea1', 'class': 'materialize-textarea',  # 'placeholder': 'Escribe tus comentarios...',
     }))
+    captcha = ReCaptchaField(widget=ReCaptchaWidget())

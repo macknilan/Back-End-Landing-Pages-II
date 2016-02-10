@@ -14,6 +14,7 @@ INSTALLED_APPS = (
     'muebles',
     'ckeditor',
     'sorl.thumbnail',
+    'snowpenguin.django.recaptcha2',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -165,5 +166,8 @@ CKEDITOR_CONFIGS = {
 # }
 # #--------------------# DJANGO-CKEDITOR #--------------------#
 #
+
+RECAPTCHA_PRIVATE_KEY = '6LcG9xcTAAAAAJ93QLbpLZc-IoG2AXNvc8ZesLk9'
+RECAPTCHA_PUBLIC_KEY = '6LcG9xcTAAAAAO2tq6gGcqQ4hXszuSSW_Ynfdrz-'
 
 
