@@ -1,0 +1,30 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Frontend: Rodolfo Nicacio Ugalde Ochoa
+    Backend: Rodolfo Nicacio Ugalde Ochoa
+    Twitter: @nomackayu
+    https://github.com/macknilan
+    From:Tequisquiapa, Querétaro, México
+
+# THANKS
+
+    Twitter:@platzi
+    Location:Colombia, Colombia
+
+/* SITE */
+    Last update:2015/10/16
+    Language: Spanish
+    Doctype:HTML5
+    IDE: Sublime Text
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr
+    materializecss.com
+    javascript
+    django
+    Linux

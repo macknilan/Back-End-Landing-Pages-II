@@ -3,6 +3,9 @@
 # IGNORAR TODA LA CARPETA MEDIA
 media/*
 #
+# IGNORAR LA CARPETA .idea
+.idea/*
+#
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
