@@ -6,6 +6,9 @@ media/*
 # IGNORAR LA CARPETA .idea
 .idea/*
 #
+#IGNORAR CARPETA COLLECT_STATIC
+COLLECT_STATIC/*
+#
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
