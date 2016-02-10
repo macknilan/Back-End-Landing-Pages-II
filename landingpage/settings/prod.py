@@ -10,6 +10,7 @@ ALLOWED_HOSTS = ['.rodolfougalde.xyz']
 INSTALLED_APPS += (
     'storages',
 )
+# ######################## STATIC & MEDIA FIELDS ####################### #
 
 # #----------# CKEDITOR #----------#
 AWS_QUERYSTRING_AUTH = False
@@ -42,4 +43,5 @@ STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+# ######################## STATIC & MEDIA FIELDS ####################### #
 
