@@ -2,8 +2,6 @@
 
 from django import forms
 from django.core.validators import RegexValidator
-from snowpenguin.django.recaptcha2.fields import ReCaptchaField
-from snowpenguin.django.recaptcha2.widgets import ReCaptchaWidget
 
 
 class ContactForm(forms.Form):
@@ -24,4 +22,3 @@ class ContactForm(forms.Form):
         'title': 'Escribe aquì tus comentarios', 'rows': 10, 'cols': 10, 'required': True,
         'id': 'textarea1', 'class': 'materialize-textarea',  # 'placeholder': 'Escribe tus comentarios...',
     }))
-    captcha = ReCaptchaField(widget=ReCaptchaWidget())
