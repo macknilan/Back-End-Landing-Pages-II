@@ -14,7 +14,6 @@ INSTALLED_APPS = (
     'muebles',
     'ckeditor',
     'sorl.thumbnail',
-    'snowpenguin.django.recaptcha2',
 )
 
 MIDDLEWARE_CLASSES = (

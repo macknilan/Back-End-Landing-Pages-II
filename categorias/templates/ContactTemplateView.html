@@ -2,7 +2,6 @@
 {% comment %}  PLANTILLA PARA FORMULARIO DE CONTACTO {% endcomment %}
 {% block title %} Contacto {% endblock title %}
 {% block ContactTemplate %}
-{% load recaptcha2 %}
     <div class="row">
     <section>
         <article>
@@ -61,7 +60,6 @@
                         <span>{{ form.captcha }}</span>
                     </div>
                 </div>
-            {% recaptcha_init 'es' %}
         </form>
     </div><!-- .row container -->
 <!-- script -->
