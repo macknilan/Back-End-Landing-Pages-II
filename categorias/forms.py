@@ -2,6 +2,7 @@
 
 from django import forms
 from django.core.validators import RegexValidator
+from captcha.fields import ReCaptchaField
 
 
 class ContactForm(forms.Form):
@@ -22,3 +23,4 @@ class ContactForm(forms.Form):
         'title': 'Escribe aquì tus comentarios', 'rows': 10, 'cols': 10, 'required': True,
         'id': 'textarea1', 'class': 'materialize-textarea',  # 'placeholder': 'Escribe tus comentarios...',
     }))
+    # captcha = ReCaptchaField(attrs={'lang': 'es'})

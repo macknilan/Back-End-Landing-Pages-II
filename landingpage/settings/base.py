@@ -14,6 +14,7 @@ INSTALLED_APPS = (
     'muebles',
     'ckeditor',
     'sorl.thumbnail',
+    'captcha',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -114,10 +115,10 @@ USE_TZ = True
 
 # #----------------------# SEND EMAILS #----------------------#
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'EMAIL_HOST'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'EMAIL_HOST_USER'
-EMAIL_HOST_PASSWORD = 'EMAIL_HOST_PASSWORD'
+EMAIL_HOST = os.environ['EMAIL_HOST']
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 # #----------------------# SEND EMAILS #----------------------#
 # #--------------------# DJANGO-CKEDITOR #--------------------#
 CKEDITOR_UPLOAD_PATH = "uploads_by_ckeditor/"
@@ -168,5 +169,5 @@ CKEDITOR_CONFIGS = {
 
 RECAPTCHA_PRIVATE_KEY = '6LcG9xcTAAAAAJ93QLbpLZc-IoG2AXNvc8ZesLk9'
 RECAPTCHA_PUBLIC_KEY = '6LcG9xcTAAAAAO2tq6gGcqQ4hXszuSSW_Ynfdrz-'
-
-
+NOCAPTCHA = True
+RECAPTCHA_USE_SSL = True
