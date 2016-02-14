@@ -94,31 +94,26 @@ class ContactFormView(FormView):
     """
     template_name = 'ContactTemplateView.html'
     form_class = ContactForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('muebles:home')
 
     def form_valid(self, form):
-        # message = "{subject} / {sender} envio el siguiente comentario: ".format(
-        #     sender=form.cleaned_data['sender'],
-        #     subject=form.cleaned_data['subject']
-        # )
-        sender = form.cleaned_data['sender']
         subject = form.cleaned_data['subject']
+        sender = form.cleaned_data['sender']
         message = form.cleaned_data['message']
 
-        #  message += "\n\n{0}".format(form.cleaned_data['message'])
-        body = "Titulo: " + subject + "\n"
-        + "Envia: " + sender + "\n"
-        + "Mensaje: " + message
-        recipients = ['rodolfougaldeochoa@gmail.com']
+        body = (
+            "Nombre/Titulo: %s \n" % subject
+            + "Envia: %s \n" % sender
+            + "Mensaje: %s \n" % message
+        )
 
-        mail = EmailMessage(subject, body, sender, recipients, reply_to=['noreply@gmail.com'])
-        #  import ipdb; ipdb.set_trace() # ESTO ES PARA DEBUGEAR
+        mail = EmailMessage(subject, body, sender, ['rodolfougaldeochoa@gmail.com'],
+                            reply_to=['noreply@gmail.com'])
+        # import ipdb; ipdb.set_trace() # ESTO ES PARA DEBUGEAR
         mail.send()
 
-        return super(ContactFormView, self). form_valid(form)
+        return super(ContactFormView, self).form_valid(form)
 
         # email = EmailMessage('Hello', 'Body goes here', 'from@example.com',
         #             ['to1@example.com', 'to2@example.com'], ['bcc@example.com'],
-        #             reply_to=['another@example.com'], headers={'Message-ID': 'foo'})
-
-
+        # reply_to=['another@example.com'], headers={'Message-ID': 'foo'})

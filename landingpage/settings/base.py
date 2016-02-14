@@ -119,6 +119,7 @@ EMAIL_PORT = 587
 EMAIL_HOST = os.environ['EMAIL_HOST']
 EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+
 # #----------------------# SEND EMAILS #----------------------#
 # #--------------------# DJANGO-CKEDITOR #--------------------#
 CKEDITOR_UPLOAD_PATH = "uploads_by_ckeditor/"
